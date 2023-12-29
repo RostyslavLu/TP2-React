@@ -1,9 +1,9 @@
 import  { FaTimes } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 
-const SingleProduct = ({ product, onDelete }) => {
+const SingleProduct = ({ product }) => {
     return (
-        <div className="flex flex-row p-2 gap-3">
+        <div className="flex flex-row p-2 gap-3 hover:scale-105">
             <picture className="flex-4">
                 <img src={product.image} alt={product.name} />
             </picture>
@@ -13,11 +13,6 @@ const SingleProduct = ({ product, onDelete }) => {
                 <p className="text-sm">{product.category}</p>
                 <Link to={`/products/${product.id}`} className="text-green-500 float-left font-bold cursor-pointer">Details</Link>
             </div>
-            
-            <div className="flex-1">
-                <FaTimes className="text-red-500 float-right m-4 cursor-pointer" onClick={()=>onDelete(product.id)}/>
-            </div>
-            
         </div>
     )
 }

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
+
 const EditProduct = ({ products, onEdit }) => {
     const { id } = useParams();
     const productId = Number(id);
@@ -32,7 +34,8 @@ const EditProduct = ({ products, onEdit }) => {
     };
     return (
         <div className="md:container md:mx-auto min-h-[70vh]">
-
+            {/* https://reactrouter.com/en/main/components/link */}
+            <Link to=".." className="text-green-500 float-right font-bold text-2xl cursor-pointer" relative='path'>Back to details</Link>
 
                 <div className="flex flex-col items-left justify-center p-4 col-span-2 md:col-span-1">
                     <form onSubmit={onSubmit}>
@@ -57,7 +60,7 @@ const EditProduct = ({ products, onEdit }) => {
                             <input className="w-full px-3 py-2 text-lg leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" type="text" placeholder="Product image" value={image} onChange={(e) => setImage(e.target.value)} />
                         </div>
                         <div className="flex items-center justify-between">
-                            <button className="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700 focus:outline-none focus:shadow-outline" type="submit">Edit</button>
+                            <button className="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700 focus:outline-none focus:shadow-outline" type="submit">Update</button>
                         </div>
                     </form>
                 </div>

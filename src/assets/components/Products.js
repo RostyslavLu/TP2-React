@@ -1,21 +1,19 @@
 import AddProduct from "./AddProduct";
 import SingleProduct from "./SingleProduct";
 
-import { Link } from "react-router-dom";
-
-const Products = ({ products, onAdd, onDelete }) => {
+const Products = ({ products, onAdd }) => {
     return (
         <div className="md:container md:mx-auto min-h-[70vh]">
             <div className="flex flex-row items-center justify-center">
                 <AddProduct onAdd={onAdd} />
             </div>
-            <div className="grid grid-cols-2 gap-4 p-4 mt-20">
+            <div className="grid grid-cols-3 gap-4 p-4 mt-20">
                 {products.length > 0 ? (
                     
                     products.map((product) => (
                         <div key={product.id}>
-                        <SingleProduct onDelete={onDelete} product={product} />
-                        <Link to={`/products/${product.id}/edit`}>Edit</Link>
+                        <SingleProduct product={product} />
+                        
                       </div>
                         
                     ))
