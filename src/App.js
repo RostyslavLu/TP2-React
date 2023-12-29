@@ -3,6 +3,7 @@ import Header from './assets/components/Header';
 import Footer from './assets/components/Footer';
 import About from './assets/components/About';
 import Home from './assets/components/Home';
+import EditProduct from './assets/components/EditProduct';
 import ProductDetails from './assets/components/ProductDetails';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -101,14 +102,21 @@ export default function App() {
     setProducts([...products, newProduct])
   }
 
+
+  const editProduct = (updatedProduct) => {
+    setProducts(products.map((product) => 
+      product.id === updatedProduct.id ? updatedProduct : product
+    ));
+  }
   return (
     <BrowserRouter >
       <div className="min-h-screen">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products products={products} onAdd={addProduct} onDelete={deleteProduct} />} />
+          <Route path="/products" element={<Products products={products} onAdd={addProduct} onEdit={editProduct} onDelete={deleteProduct} />} />
           <Route path="/products/:id" element={<ProductDetails products={products} />} />
+          <Route path="/products/:id/edit" element={<EditProduct products={products} onEdit={editProduct} />} />
           <Route path="/about" element={<About />} />
         </Routes>
         <Footer />

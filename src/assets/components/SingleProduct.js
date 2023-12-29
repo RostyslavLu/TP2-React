@@ -14,7 +14,7 @@ const SingleProduct = ({ product, onDelete }) => {
                 <Link to={`/products/${product.id}`} className="text-green-500 float-left font-bold cursor-pointer">Details</Link>
             </div>
             
-            <div class="flex-1">
+            <div className="flex-1">
                 <FaTimes className="text-red-500 float-right m-4 cursor-pointer" onClick={()=>onDelete(product.id)}/>
             </div>
             

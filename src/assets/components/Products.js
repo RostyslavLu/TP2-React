@@ -1,6 +1,8 @@
 import AddProduct from "./AddProduct";
 import SingleProduct from "./SingleProduct";
 
+import { Link } from "react-router-dom";
+
 const Products = ({ products, onAdd, onDelete }) => {
     return (
         <div className="md:container md:mx-auto min-h-[70vh]">
@@ -11,7 +13,11 @@ const Products = ({ products, onAdd, onDelete }) => {
                 {products.length > 0 ? (
                     
                     products.map((product) => (
-                        <SingleProduct key={product.id} onDelete={onDelete} product={product} />
+                        <div key={product.id}>
+                        <SingleProduct onDelete={onDelete} product={product} />
+                        <Link to={`/products/${product.id}/edit`}>Edit</Link>
+                      </div>
+                        
                     ))
                 ) : (
                     <div className="p-4 mb-4 text-sm text-center text-red-800 rounded-lg bg-red-50 font-bold col-span-2">Empty list</div>

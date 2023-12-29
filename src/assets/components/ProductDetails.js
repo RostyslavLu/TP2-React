@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const ProductDetails = ({ products,  setProducts }) => {
+const ProductDetails = ({ products }) => {
     const { id } = useParams();
     const product = products.find((product) => product.id === Number(id));
     return (
@@ -15,10 +15,8 @@ const ProductDetails = ({ products,  setProducts }) => {
                     <p className="text-xl font-bold mt-5">{product.category}</p>
                     <p className="text-xl font-bold">${product.price}</p>
                     <p className="text-xl">{product.description}</p>
-                    <Link to={`/products/${product.id}/edit`} className="text-left text-xl text-indigo-700 font-bold mt-4">Edit</Link>
                 </div>
             </div>
-
         </div>
     )
 }
