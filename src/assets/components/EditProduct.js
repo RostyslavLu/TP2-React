@@ -35,32 +35,32 @@ const EditProduct = ({ products, onEdit }) => {
     return (
         <div className="md:container md:mx-auto min-h-[70vh]">
             {/* https://reactrouter.com/en/main/components/link */}
-            <Link to=".." className="text-green-500 float-right font-bold text-2xl cursor-pointer" relative='path'>Back to details</Link>
+            <Link to=".." className="float-right font-bold text-xl cursor-pointer" relative='path'>Back to details</Link>
 
                 <div className="flex flex-col items-left justify-center p-4 col-span-2 md:col-span-1">
                     <form onSubmit={onSubmit}>
                         <div className="mb-4">
                             <label className="block mb-2 text-lg font-bold text-gray-700">Name</label>
-                            <input className="w-full px-3 py-2 text-lg leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" name='name' type="text" placeholder="Product name" value={name} onChange={(e) => setName(e.target.value)} />
+                            <input className="w-full px-3 py-2 text-lg leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline focus:bg-indigo-50" name='name' type="text" placeholder="Product name" value={name} onChange={(e) => setName(e.target.value)} />
                         </div>
                         <div className="mb-4">
                             <label className="block mb-2 text-lg font-bold text-gray-700">Description</label>
-                            <textarea className="w-full px-3 py-2 text-lg leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" rows="5" placeholder="Product description" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
+                            <textarea className="w-full px-3 py-2 text-lg leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline focus:bg-indigo-50" rows="5" placeholder="Product description" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
                         </div>
                         <div className="mb-4">
                             <label className="block mb-2 text-lg font-bold text-gray-700">Price</label>
-                            <input className="w-full px-3 py-2 text-lg leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" type="number" placeholder="Product price" value={price} onChange={(e) => setPrice(e.target.value)} />
+                            <input className="w-full px-3 py-2 text-lg leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline focus:bg-indigo-50" type="number" placeholder="Product price" value={price} onChange={(e) => setPrice(e.target.value)} />
                         </div>
                         <div className="mb-4">
                             <label className="block mb-2 text-lg font-bold text-gray-700">Category</label>
-                            <input className="w-full px-3 py-2 text-lg leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" type="text" placeholder="Product category" value={category} onChange={(e) => setCategory(e.target.value)} />
+                            <input className="w-full px-3 py-2 text-lg leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline focus:bg-indigo-50" type="text" placeholder="Product category" value={category} onChange={(e) => setCategory(e.target.value)} />
                         </div>
                         <div className="mb-4">
                             <label className="block mb-2 text-lg font-bold text-gray-700">Image</label>
-                            <input className="w-full px-3 py-2 text-lg leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" type="text" placeholder="Product image" value={image} onChange={(e) => setImage(e.target.value)} />
+                            <input className="w-full px-3 py-2 text-lg leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline focus:bg-indigo-50" type="text" placeholder="Product image" value={image} onChange={(e) => setImage(e.target.value)} />
                         </div>
                         <div className="flex items-center justify-between">
-                            <button className="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700 focus:outline-none focus:shadow-outline" type="submit">Update</button>
+                            <button className="px-16 py-2 font-bold border border-green-500 text-green-500 rounded-full hover:text-white hover:bg-green-500 focus:outline-none focus:shadow-outline" type="submit">Update</button>
                         </div>
                     </form>
                 </div>

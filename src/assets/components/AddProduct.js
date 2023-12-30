@@ -24,25 +24,25 @@ const AddProduct = ({onAdd}) => {
             <h1 className="text-3xl font-bold text-center">Add Product</h1>
             <div className="form-control flex flex-col">
                 <label className="mt-2">Name</label>
-                <input className="border p-1" type="text" placeholder="Ajouter un nom" value={name} onChange={(e)=>setName(e.target.value)}/>
+                <input className="border p-1 focus:bg-indigo-50" type="text" placeholder="Ajouter un nom" value={name} onChange={(e)=>setName(e.target.value)}/>
             </div>
             <div className="form-control flex flex-col">
                 <label className="mt-2">Description</label>
-                <textarea className="border p-1" value={description} placeholder="Ajouter un description" rows={4} onChange={(e)=>setDescription(e.target.value)}>{description}</textarea>
+                <textarea className="border p-1 focus:bg-indigo-50" value={description} placeholder="Ajouter un description" rows={4} onChange={(e)=>setDescription(e.target.value)}>{description}</textarea>
             </div>
             <div className="form-control flex flex-col">
                 <label className="mt-2">Price</label>
-                <input className="border p-1" type="number" placeholder="Ajouter un prix" value={price} onChange={(e)=>setPrice(e.target.value)}/>
+                <input className="border p-1 focus:bg-indigo-50" type="number" placeholder="Ajouter un prix" value={price} onChange={(e)=>setPrice(e.target.value)}/>
             </div>
             <div className="form-control flex flex-col">
                 <label className="mt-2">Category</label>
-                <input className="border p-1" type="text" placeholder="Ajouter une catégorie" value={category} onChange={(e)=>setCategory(e.target.value)}/>
+                <input className="border p-1 focus:bg-indigo-50" type="text" placeholder="Ajouter une catégorie" value={category} onChange={(e)=>setCategory(e.target.value)}/>
             </div>
             <div className="form-control flex flex-col">
                 <label className="mt-2">Image</label>
-                <input className=" border p-1" type="text" placeholder="Ajouter une image" value={image} onChange={(e)=>setImage(e.target.value)}/>
+                <input className=" border p-1 focus:bg-indigo-50" type="text" placeholder="Ajouter une image" value={image} onChange={(e)=>setImage(e.target.value)}/>
             </div>
-            <input type="submit" value="Save" className="btn btn-green btn-block text-lg font-bold text-indigo-700 mt-4 cursor-pointer" />
+            <input type="submit" value="Save" className="text-indigo-700 text-sm float-left font-bold cursor-pointer mt-5 border border-indigo-500 px-10 py-2 rounded-full hover:text-white hover:bg-indigo-700" />
         </form>
     )
 }

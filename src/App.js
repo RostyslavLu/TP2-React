@@ -102,12 +102,14 @@ export default function App() {
     setProducts([...products, newProduct])
   }
 
-
   const editProduct = (updatedProduct) => {
     setProducts(products.map((product) => 
       product.id === updatedProduct.id ? updatedProduct : product
     ));
   }
+  // toggle add product form visibility
+  //const [showAddProduct, setShowAddProduct] = useState(false);
+
   return (
     <BrowserRouter >
       <div className="min-h-screen">

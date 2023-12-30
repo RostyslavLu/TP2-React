@@ -8,7 +8,7 @@ const ProductDetails = ({ products, onDelete }) => {
     const navigate = useNavigate();
     return (
         <div className="md:container md:mx-auto min-h-[70vh]">
-            <Link to="/products" className="text-green-500 float-right font-bold text-2xl cursor-pointer">Back to products</Link>
+            <Link to="/products" className="float-right font-bold text-xl cursor-pointer">Back to products</Link>
             <div className="grid grid-cols-2 gap-4 p-4">
                 <div className="flex flex-col items-center justify-center p-4 col-span-2 md:col-span-1">
                     <img src={product.image} alt={product.name} className="w-96 h-96 object-cover rounded-lg" />
@@ -19,8 +19,8 @@ const ProductDetails = ({ products, onDelete }) => {
                     <p className="text-xl font-bold">${product.price}</p>
                     <p className="text-xl">{product.description}</p>
                     <div className="flex flex-row justify-start gap-10">
-                        <Link to={`/products/${product.id}/edit`} className="text-indigo-700 text-2xl float-left font-bold cursor-pointer mt-5">Edit</Link>
-                        <button className="text-red-500 text-2xl float-right font-bold cursor-pointer mt-5" onClick={()=>onDelete(product.id, navigate('/products'))}>Delete</button>
+                        <Link to={`/products/${product.id}/edit`} className="text-indigo-700 text-xl float-left font-bold cursor-pointer mt-5 border border-indigo-500 px-16 py-2 rounded-full hover:text-white hover:bg-indigo-700">Edit</Link>
+                        <button className="text-red-500 text-xl float-right font-bold cursor-pointer mt-5 border border-red-500 px-16 py-2 rounded-full hover:text-white hover:bg-red-500" onClick={()=>onDelete(product.id, navigate('/products'))}>Delete</button>
                     </div>
                 </div>
             </div>
