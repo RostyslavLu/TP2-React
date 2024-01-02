@@ -1,4 +1,9 @@
-const About = () => {
+import { useEffect } from "react";
+
+const About = ({setShowAddProduct}) => {
+    useEffect(() => {
+        setShowAddProduct(false);
+    }, [setShowAddProduct]);
     return (
         <div className="p-4 md:container md:mx-auto min-h-[70vh]">
             <h1 className="text-3xl font-bold">About us</h1>

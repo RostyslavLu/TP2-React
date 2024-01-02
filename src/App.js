@@ -4,7 +4,9 @@ import Footer from './assets/components/Footer';
 import About from './assets/components/About';
 import Home from './assets/components/Home';
 import EditProduct from './assets/components/EditProduct';
+import ElementAdd from './assets/components/ElementAdd';
 import ProductDetails from './assets/components/ProductDetails';
+import AddProduct from './assets/components/AddProduct';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -95,6 +97,7 @@ export default function App() {
   const deleteProduct = async (id) => {
     setProducts(products.filter((product) => product.id !== id))
   }
+
   const addProduct = (product) => {
     const lastId = products.length > 0 ? products[products.length - 1].id : 0
     const id = lastId + 1
@@ -107,19 +110,19 @@ export default function App() {
       product.id === updatedProduct.id ? updatedProduct : product
     ));
   }
-  // toggle add product form visibility
-  //const [showAddProduct, setShowAddProduct] = useState(false);
-
+  const [showAddProduct, setShowAddProduct] = useState(false);
   return (
     <BrowserRouter >
       <div className="min-h-screen">
         <Header />
+        <ElementAdd toggleAdd={()=> setShowAddProduct(!showAddProduct)} showAdd={showAddProduct} />
+        <div className='flex justify-center'>{ showAddProduct && <AddProduct onAdd={addProduct} />}</div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products products={products} onAdd={addProduct} onEdit={editProduct} onDelete={deleteProduct} />} />
           <Route path="/products/:id" element={<ProductDetails products={products} onDelete={deleteProduct} />} />
           <Route path="/products/:id/edit" element={<EditProduct products={products} onEdit={editProduct} />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<About setShowAddProduct={setShowAddProduct} />} />
         </Routes>
         <Footer />
       </div>
