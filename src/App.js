@@ -118,7 +118,7 @@ export default function App() {
         <ElementAdd toggleAdd={()=> setShowAddProduct(!showAddProduct)} showAdd={showAddProduct} />
         <div className='flex justify-center'>{ showAddProduct && <AddProduct onAdd={addProduct} />}</div>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home setShowAddProduct={setShowAddProduct} />} />
           <Route path="/products" element={<Products products={products} onAdd={addProduct} onEdit={editProduct} onDelete={deleteProduct} />} />
           <Route path="/products/:id" element={<ProductDetails products={products} onDelete={deleteProduct} />} />
           <Route path="/products/:id/edit" element={<EditProduct products={products} onEdit={editProduct} />} />

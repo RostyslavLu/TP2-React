@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
-const Home = () => {
+import { useEffect } from "react";
+
+const Home = ({setShowAddProduct}) => {
+  useEffect(() => {
+    setShowAddProduct(false);
+  }, [setShowAddProduct]);
   return (
     <div className="flex flex-col items-center min-h-[70vh]">
       <h1 className="text-3xl font-bold">Welcome to our store!</h1>
