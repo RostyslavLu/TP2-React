@@ -3,10 +3,14 @@ import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
-const EditProduct = ({ products, onEdit }) => {
+const EditProduct = ({ products, onEdit, setShowAddProduct }) => {
     const { id } = useParams();
     const productId = Number(id);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        setShowAddProduct(false);
+    }, [setShowAddProduct]);
   
     const product = products.find((product) => product.id === productId);
   

@@ -120,8 +120,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home setShowAddProduct={setShowAddProduct} />} />
           <Route path="/products" element={<Products products={products} onAdd={addProduct} onEdit={editProduct} onDelete={deleteProduct} />} />
-          <Route path="/products/:id" element={<ProductDetails products={products} onDelete={deleteProduct} />} />
-          <Route path="/products/:id/edit" element={<EditProduct products={products} onEdit={editProduct} />} />
+          <Route path="/products/:id" element={<ProductDetails products={products} onDelete={deleteProduct} setShowAddProduct={setShowAddProduct} />} />
+          <Route path="/products/:id/edit" element={<EditProduct products={products} onEdit={editProduct} setShowAddProduct={setShowAddProduct} />} />
           <Route path="/about" element={<About setShowAddProduct={setShowAddProduct} />} />
         </Routes>
         <Footer />

@@ -1,8 +1,12 @@
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
-const ProductDetails = ({ products, onDelete }) => {
+const ProductDetails = ({ products, onDelete, setShowAddProduct }) => {
+    useEffect(() => {
+        setShowAddProduct(false);
+    }, [setShowAddProduct]);
     const { id } = useParams();
     const product = products.find((product) => product.id === Number(id));
     const navigate = useNavigate();
