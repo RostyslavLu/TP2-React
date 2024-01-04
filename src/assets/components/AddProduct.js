@@ -49,7 +49,7 @@ const AddProduct = ({ onAdd }) => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        if (!validateForm()) {
+        if (validateForm()) {
             onAdd({ name, description, price, category, image });
 
             setName('');
