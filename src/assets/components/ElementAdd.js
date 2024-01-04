@@ -3,6 +3,7 @@ import Button from './Button';
 import { useLocation } from 'react-router-dom';
 import { FiPlusCircle } from "react-icons/fi";
 import { FiMinusCircle } from "react-icons/fi";
+
 const ElementAdd = (props) => {
     const location = useLocation();
     return (
