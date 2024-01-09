@@ -112,7 +112,7 @@ export default function App() {
   }
   const [showAddProduct, setShowAddProduct] = useState(false);
   return (
-    <BrowserRouter >
+    <BrowserRouter basename="tp2store">
       <div className="min-h-screen">
         <Header />
         <ElementAdd toggleAdd={()=> setShowAddProduct(!showAddProduct)} showAdd={showAddProduct} />
