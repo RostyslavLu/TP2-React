@@ -50,10 +50,10 @@ export default function App() {
       body: JSON.stringify(product),
     });
     const data = await response.json();
+    console.log('Edited product:', data);
     setProducts(products.map((product) => product.id === data.id ? data : product));
   }
 
-  
   const [showAddProduct, setShowAddProduct] = useState(false);
   return (
     <BrowserRouter>
